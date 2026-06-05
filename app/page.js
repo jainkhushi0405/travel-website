@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import Searchform from "../components/Searchform";
+import Searchform from "@/components/Searchform";
 import TripCards from "../components/TripCards";
 import TravelOptions from "../components/TravelOptions";
 import Reviews from "../components/Reviews";

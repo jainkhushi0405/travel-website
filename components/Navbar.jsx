@@ -1,23 +1,77 @@
 import Image from "next/image";
+
 export default function Navbar() {
   return (
-    <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-6">
-      <Image
-  src="/logo.png"
+    <nav className="absolute top-[32px] left-[48px] right-[48px] z-50 flex items-center justify-between">
+     <Image
+  src="/logo-white.png"
   alt="Travel World"
-  width={180}
-  height={60}
+  width={123}
+  height={36}
 />
-      
-      <ul className="flex gap-8 text-white">
-  <li>✈ Flight</li>
-  <li>🚆 Train</li>
-  <li>🏖 Holiday</li>
-  <li>🛕 Holy Places ▼</li>
-</ul>
-      <button className="bg-white text-black px-5 py-2 rounded-lg">
-       Login / Sign up
-      </button>
+
+
+      <ul className="flex gap-5 text-[#F5F5F5] text-[14px] font-medium">
+
+        <li className="flex items-center gap-1">
+          <Image
+            src="/airplane.svg"
+            alt="Flight"
+            width={20}
+            height={20}
+          />
+          Flight
+        </li>
+
+        <li className="flex items-center gap-1">
+          <Image
+            src="/train.svg"
+            alt="Train"
+            width={20}
+            height={20}
+          />
+          Train
+        </li>
+
+        <li className="flex items-center gap-1">
+          <Image
+            src="/holiday.svg"
+            alt="Holiday"
+            width={20}
+            height={20}
+          />
+          Holiday
+        </li>
+
+        <li className="flex items-center gap-1">
+          <Image
+            src="/holy-places.svg"
+            alt="Holy Places"
+            width={20}
+            height={20}
+          />
+          Holy Places ▼
+        </li>
+
+      </ul>
+
+     <button
+  className="
+    w-[163px]
+    h-[48px]
+    bg-white
+    text-black
+    text-[14px]
+    font-medium
+    rounded-[8px]
+    flex
+    items-center
+    justify-center
+  "
+>
+  Login / Sign up
+</button>
+
     </nav>
   );
 }
