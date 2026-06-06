@@ -1,76 +1,97 @@
 export default function Searchform() {
   return (
-    <div className="bg-white shadow-lg rounded-3xl p-8 w-[92%] mx-auto -mt-20 relative z-10">
+    <div className="bg-white shadow-lg rounded-3xl p-8 w-fit mx-auto -mt-20 relative z-10">
       <h3 className="font-semibold text-2xl mb-6">✈ Flights</h3>
 
-      <div className="grid grid-cols-[1fr_1fr_1fr_1fr_1fr_1.5fr] gap-4 items-end">
-        <div className="relative">
-  <label className="text-sm text-gray-500">From</label>
+      <div className="flex gap-[10px] items-end">
+        {/* From */}
+        <div className="relative w-[206px]">
+          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+            From
+          </label>
 
-  <input
-    type="text"
-    value="Mumbai"
-    readOnly
-    className="border p-3 rounded w-full"
-  />
+          <input
+            type="text"
+            value="Mumbai"
+            readOnly
+            className="border h-[56px] px-4 rounded-[4px] w-full"
+          />
 
-  <span className="absolute right-3 top-11 text-xl">
-    ⇄
-  </span>
-</div>
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center text-[24px] text-black font-bold">
+            ⇄
+          </span>
+        </div>
 
-        <div className="relative">
-  <label className="text-sm text-gray-500">To</label>
+        {/* To */}
+        <div className="relative w-[206px]">
+          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+            To
+          </label>
 
-  <input
-    type="text"
-    value="Delhi"
-    readOnly
-    className="border p-3 rounded w-full"
-  />
+          <input
+            type="text"
+            value="Delhi"
+            readOnly
+            className="border h-[56px] px-4 rounded-[4px] w-full"
+          />
 
-  <span className="absolute right-3 top-11 text-xl">
-    ⇄
-  </span>
-</div>
-        <div>
-          <label className="text-sm text-gray-500">Trip</label>
-          <select className="border p-3 rounded w-full">
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center text-[24px] text-black font-bold">
+            ⇄
+          </span>
+        </div>
+
+        {/* Trip */}
+        <div className="relative w-[206px]">
+          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+            Trip
+          </label>
+
+          <select className="border h-[56px] px-4 rounded-[4px] w-full">
             <option>Return</option>
             <option>One Way</option>
             <option>Multicity</option>
           </select>
         </div>
 
-        <div>
-          <label className="text-sm text-gray-500">Depart</label>
+        {/* Depart */}
+        <div className="relative w-[206px]">
+          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+            Depart
+          </label>
+
           <input
             type="text"
             value="25 May 24"
             readOnly
-            className="border p-3 rounded w-full"
+            className="border h-[56px] px-4 rounded-[4px] w-full"
           />
         </div>
 
-        <div>
-          <label className="text-sm text-gray-500">Return</label>
+        {/* Return */}
+        <div className="relative w-[206px]">
+          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+            Return
+          </label>
+
           <input
             type="text"
             value="25 May 24"
             readOnly
-            className="border p-3 rounded w-full"
+            className="border h-[56px] px-4 rounded-[4px] w-full"
           />
         </div>
 
-        <div>
-          <label className="text-sm text-gray-500">
+        {/* Passenger */}
+        <div className="relative w-[230px]">
+          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Passenger - Class
           </label>
+
           <input
             type="text"
             value="2 Passenger, Economy"
             readOnly
-            className="border p-3 rounded w-full"
+            className="border h-[56px] px-4 rounded-[4px] w-full"
           />
         </div>
       </div>
@@ -80,7 +101,9 @@ export default function Searchform() {
           + Add Promo Code
         </p>
 
-        <button className="bg-orange-400 hover:bg-orange-500 text-black px-6 py-3 rounded">
+        <button
+          className="w-[144px] h-[48px] bg-[#F59842] hover:bg-[#F59842] text-black rounded-[4px] px-4 py-2 flex items-center justify-center gap-1 whitespace-nowrap"
+        >
           ✈ Show Flights
         </button>
       </div>
