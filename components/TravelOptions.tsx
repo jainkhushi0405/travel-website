@@ -1,31 +1,67 @@
 export default function TravelOptions() {
   return (
-    <section className="max-w-6xl mx-auto py-10 px-4">
-      <div className="grid md:grid-cols-2 gap-6">
+    <section className="max-w-7xl mx-auto py-10 px-4">
+      <div className="flex justify-center gap-6 flex-wrap">
 
+        {/* Flights Card */}
         <div
-          className="h-80 rounded-2xl bg-cover bg-center flex items-end p-6 text-white"
+          className="w-card h-card rounded-[20px] overflow-hidden relative"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05')",
+            backgroundImage: "url('/flight-card.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
-          <div>
-            <h2 className="text-3xl font-bold">Flights</h2>
-            <p>Search flights around the world</p>
+          <div className="absolute inset-0 bg-black/55" />
+
+          <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
+            <h2 className="text-xl-custom font-bold text-white leading-none">
+              Flights
+            </h2>
+
+            <p className="text-medium text-white text-center w-content">
+              Search Flights & Places Hire to our most popular destinations
+            </p>
+
+            <button className="h-button px-4 rounded bg-[#F59842] hover:bg-[#F59842] flex items-center gap-1 text-small font-medium text-[#112211]">
+              <img
+                src="/Paper Plane.svg"
+                alt="Flight"
+                className="w-3.5 h-3.5"
+              />
+              Show Flights
+            </button>
           </div>
         </div>
 
+        {/* Holiday Card */}
         <div
-          className="h-80 rounded-2xl bg-cover bg-center flex items-end p-6 text-white"
+          className="w-card h-card rounded-[20px] overflow-hidden relative"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')",
+            backgroundImage: "url('/holiday-card.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
-          <div>
-            <h2 className="text-3xl font-bold">Holiday</h2>
-            <p>Discover amazing destinations</p>
+          <div className="absolute inset-0 bg-black/55" />
+
+          <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
+            <h2 className="text-xl-custom font-bold text-white leading-none">
+              Holiday
+            </h2>
+
+            <p className="text-medium text-white text-center w-content">
+              Search hotels & Places Hire to our most popular destinations
+            </p>
+
+            <button className="h-button px-4 rounded bg-[#F59842] hover:bg-[#F59842] flex items-center gap-1 text-small font-medium text-[#112211]">
+              <img
+                src="/Paper Plane.svg"
+                alt="Holiday"
+                className="w-3.5 h-3.5"
+              />
+              Show Package
+            </button>
           </div>
         </div>
 

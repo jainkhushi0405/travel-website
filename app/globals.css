@@ -17,3 +17,37 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat), sans-serif;
 }
+/* Text Classes */
+.text-xl-custom {
+  font-size: 40px;
+}
+
+.text-medium {
+  font-size: 16px;
+}
+
+.text-small {
+  font-size: 14px;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+/* Width & Height Classes */
+.w-card {
+  width: 604px;
+}
+
+.h-card {
+  height: 559px;
+}
+
+.w-content {
+  max-width: 389px;
+}
+
+/* Button Height */
+.h-button {
+  height: 48px;
+}
