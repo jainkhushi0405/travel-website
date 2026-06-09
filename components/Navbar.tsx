@@ -10,7 +10,7 @@ export default function Navbar() {
         height={36}
       />
 
-      <ul className="flex gap-10 text-[#F5F5F5] text-[17px] font-medium">
+      <ul className="flex gap-10 text-[#F5F5F5] text-base font-medium">
         <li className="flex items-center gap-2">
           <Image
             src="/airplane.svg"
@@ -42,28 +42,28 @@ export default function Navbar() {
         </li>
 
         <li className="flex items-center gap-1">
-  <Image
-    src="/holy-places.svg"
-    alt="Holy Places"
-    width={20}
-    height={20}
-  />
+          <Image
+            src="/holy-places.svg"
+            alt="Holy Places"
+            width={20}
+            height={20}
+          />
 
-  <span>Holy Places</span>
+          <span>Holy Places</span>
 
-  <span className="text-[24px]">▾</span>
-</li>
+          <span className="text-2xl">▾</span>
+        </li>
       </ul>
 
       <button
         className="
           w-[163px]
-          h-[48px]
+          h-12
           bg-white
           text-black
-          text-[14px]
+          text-sm
           font-medium
-          rounded-[8px]
+          rounded-lg
           flex
           items-center
           justify-center

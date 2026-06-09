@@ -1,12 +1,22 @@
+import Image from "next/image";
+
 export default function Searchform() {
   return (
     <div className="bg-white shadow-lg rounded-3xl p-8 w-fit mx-auto -mt-20 relative z-10">
-      <h3 className="font-semibold text-2xl mb-6">✈ Flights</h3>
+      <h3 className="font-semibold text-2xl mb-6 flex items-center gap-2">
+        <Image
+          src="/flight-search.svg"
+          alt="Flights"
+          width={20}
+          height={20}
+        />
+        Flights
+      </h3>
 
-      <div className="flex gap-[10px] items-end">
+      <div className="flex gap-2 items-end">
         {/* From */}
         <div className="relative w-[206px]">
-          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             From
           </label>
 
@@ -14,17 +24,22 @@ export default function Searchform() {
             type="text"
             value="Mumbai"
             readOnly
-            className="border h-[56px] px-4 rounded-[4px] w-full"
+            className="border h-14 px-4 rounded-md w-full"
           />
 
-          <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center text-[24px] text-black font-bold">
-            ⇄
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center">
+            <Image
+              src="/ion_swap-horizontal.svg"
+              alt="Swap"
+              width={24}
+              height={24}
+            />
           </span>
         </div>
 
         {/* To */}
         <div className="relative w-[206px]">
-          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             To
           </label>
 
@@ -32,21 +47,26 @@ export default function Searchform() {
             type="text"
             value="Delhi"
             readOnly
-            className="border h-[56px] px-4 rounded-[4px] w-full"
+            className="border h-14 px-4 rounded-md w-full"
           />
 
-          <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center text-[24px] text-black font-bold">
-            ⇄
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center">
+            <Image
+              src="/ion_swap-horizontal.svg"
+              alt="Swap"
+              width={24}
+              height={24}
+            />
           </span>
         </div>
 
         {/* Trip */}
         <div className="relative w-[206px]">
-          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Trip
           </label>
 
-          <select className="border h-[56px] px-4 rounded-[4px] w-full">
+          <select className="border h-14 px-4 rounded-md w-full">
             <option>Return</option>
             <option>One Way</option>
             <option>Multicity</option>
@@ -55,7 +75,7 @@ export default function Searchform() {
 
         {/* Depart */}
         <div className="relative w-[206px]">
-          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Depart
           </label>
 
@@ -63,13 +83,13 @@ export default function Searchform() {
             type="text"
             value="25 May 24"
             readOnly
-            className="border h-[56px] px-4 rounded-[4px] w-full"
+            className="border h-14 px-4 rounded-md w-full"
           />
         </div>
 
         {/* Return */}
         <div className="relative w-[206px]">
-          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Return
           </label>
 
@@ -77,13 +97,13 @@ export default function Searchform() {
             type="text"
             value="25 May 24"
             readOnly
-            className="border h-[56px] px-4 rounded-[4px] w-full"
+            className="border h-14 px-4 rounded-md w-full"
           />
         </div>
 
         {/* Passenger */}
         <div className="relative w-[230px]">
-          <label className="text-[12px] text-gray-500 bg-white px-1 absolute -top-2 left-3">
+          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Passenger - Class
           </label>
 
@@ -91,7 +111,7 @@ export default function Searchform() {
             type="text"
             value="2 Passenger, Economy"
             readOnly
-            className="border h-[56px] px-4 rounded-[4px] w-full"
+            className="border h-14 px-4 rounded-md w-full"
           />
         </div>
       </div>
@@ -101,10 +121,15 @@ export default function Searchform() {
           + Add Promo Code
         </p>
 
-        <button
-          className="w-[144px] h-[48px] bg-[#F59842] hover:bg-[#F59842] text-black rounded-[4px] px-4 py-2 flex items-center justify-center gap-1 whitespace-nowrap"
-        >
-          ✈ Show Flights
+        <button className="w-36 h-12 bg-[#F59842] hover:bg-[#F59842] text-black rounded-md px-4 py-2 flex items-center justify-center gap-1 whitespace-nowrap">
+          <Image
+            src="/flight-search.svg"
+            alt="Flight"
+            width={16}
+            height={16}
+          />
+
+          <span>Show Flights</span>
         </button>
       </div>
     </div>
