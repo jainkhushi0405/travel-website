@@ -122,13 +122,11 @@ export default function Searchform() {
         </p>
 
         <button className="w-36 h-12 bg-[#F59842] hover:bg-[#F59842] text-black rounded-md px-4 py-2 flex items-center justify-center gap-1 whitespace-nowrap">
-          <Image
-            src="/flight-search.svg"
-            alt="Flight"
-            width={16}
-            height={16}
-          />
-
+         <img
+  src="/Paper Plane.svg"
+  alt="Flight"
+  className="w-4 h-4"
+/>
           <span>Show Flights</span>
         </button>
       </div>

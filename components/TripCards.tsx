@@ -35,7 +35,7 @@ export default function TripCards() {
         {trips.map((trip, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-md h-32 p-4 flex items-center gap-4"
+           className="bg-white rounded-2xl shadow-[0px_4px_16px_rgba(17,34,17,0.05)] h-32 p-4 flex items-center gap-4"
           >
             <img
               src={trip.image}

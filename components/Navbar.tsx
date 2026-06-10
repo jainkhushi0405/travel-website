@@ -10,7 +10,7 @@ export default function Navbar() {
         height={36}
       />
 
-      <ul className="flex gap-10 text-[#F5F5F5] text-base font-medium">
+   <ul className="flex gap-10 text-white/90 text-sm font-semibold">
         <li className="flex items-center gap-2">
           <Image
             src="/airplane.svg"
