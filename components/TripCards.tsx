@@ -1,16 +1,6 @@
+import Image from "next/image";
+import { trips } from "./Data/trips";
 export default function TripCards() {
-  const trips = [
-    { city: "Istanbul, Turkey", image: "/trips/istanbul.png" },
-    { city: "Sydney, Australia", image: "/trips/sydney.png" },
-    { city: "Baku, Azerbaijan", image: "/trips/baku.png" },
-    { city: "Malé, Maldives", image: "/trips/male.png" },
-    { city: "Paris, France", image: "/trips/paris.png" },
-    { city: "New York, US", image: "/trips/new-york.png" },
-    { city: "London, UK", image: "/trips/london.png" },
-    { city: "Tokyo, Japan", image: "/trips/tokyo.png" },
-    { city: "Dubai, UAE", image: "/trips/dubai.png" },
-  ];
-
   return (
     <section className="max-w-[1232px] mx-auto mt-16">
       {/* Heading Row */}
@@ -37,12 +27,14 @@ export default function TripCards() {
             key={index}
            className="bg-white rounded-2xl shadow-[0px_4px_16px_rgba(17,34,17,0.05)] h-32 p-4 flex items-center gap-4"
           >
-            <img
-              src={trip.image}
-              alt={trip.city}
-              className="w-24 h-24 rounded-lg object-cover"
-            />
-
+            
+              <Image
+  src={trip.image}
+  alt={trip.city}
+  width={96}
+  height={96}
+  className="w-24 h-24 rounded-lg object-cover"
+/>
             <div className="flex flex-col gap-2">
               <h3 className="text-base font-semibold text-[#112211]/70">
                 {trip.city}

@@ -51,3 +51,24 @@ body {
 .h-button {
   height: 48px;
 }
+
+/* Colors */
+.text-primary {
+  color: #112211;
+}
+
+.text-primary-light {
+  color: rgba(17, 34, 17, 0.75);
+}
+
+.text-primary-fade {
+  color: rgba(17, 34, 17, 0.50);
+}
+
+.bg-primary-orange {
+  background-color: #F59842;
+}
+
+.border-primary-orange {
+  border-color: #F59842;
+}

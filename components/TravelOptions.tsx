@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function TravelOptions() {
   return (
     <section className="max-w-7xl mx-auto py-10 px-4">
@@ -24,11 +25,13 @@ export default function TravelOptions() {
             </p>
 
             <button className="h-button px-4 rounded bg-[#F59842] hover:bg-[#F59842] flex items-center gap-1 text-small font-medium text-[#112211]">
-              <img
-                src="/Paper Plane.svg"
-                alt="Flight"
-                className="w-3.5 h-3.5"
-              />
+              <Image
+  src="/Paper Plane.svg"
+  alt="Flight"
+  width={14}
+  height={14}
+  className="w-3.5 h-3.5"
+/>
               Show Flights
             </button>
           </div>
@@ -55,11 +58,13 @@ export default function TravelOptions() {
             </p>
 
             <button className="h-button px-4 rounded bg-[#F59842] hover:bg-[#F59842] flex items-center gap-1 text-small font-medium text-[#112211]">
-              <img
-                src="/Paper Plane.svg"
-                alt="Holiday"
-                className="w-3.5 h-3.5"
-              />
+             <Image
+  src="/Paper Plane.svg"
+  alt="Holiday"
+  width={14}
+  height={14}
+  className="w-3.5 h-3.5"
+/>
               Show Package
             </button>
           </div>
