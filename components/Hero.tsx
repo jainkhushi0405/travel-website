@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section
-      className="h-[600px] flex flex-col justify-center items-center text-white bg-cover bg-center overflow-hidden -mt-8"
+       className="h-[650px] pb-24 flex flex-col justify-center items-center text-white bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: "url('/hero-figma.png')" }}
     >
     <h3 className="text-5xl font-semibold mb-2">

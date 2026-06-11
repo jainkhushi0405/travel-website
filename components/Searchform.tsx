@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Searchform() {
   return (
-    <div className="bg-white shadow-lg rounded-3xl p-8 w-fit mx-auto -mt-20 relative z-10">
+      <div className="bg-white shadow-lg rounded-3xl p-8 max-w-[1232px] mx-auto -mt-20 relative z-10">
       <h3 className="font-semibold text-2xl mb-6 flex items-center gap-2">
         <Image
           src="/flight-search.svg"
