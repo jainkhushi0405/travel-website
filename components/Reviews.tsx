@@ -4,7 +4,7 @@ import { reviews } from "./Data/reviews";
 export default function Reviews() {
   
   return (
-    <section className="bg-[#FFFFFF] pt-20 pb-8">
+    <section className="bg-[#FFFFFF] pt-2 pb-40">
       <div className="max-w-[1232px] mx-auto">
         {/* Header */}
         <div className="flex items-start justify-between mb-12">

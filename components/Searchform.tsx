@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Searchform() {
+  const [tripType, setTripType] = useState("Return");
+  const [showDropdown, setShowDropdown] = useState(false);
   return (
       <div className="bg-white shadow-lg rounded-3xl p-8 max-w-[1232px] mx-auto -mt-20 relative z-10">
       <h3 className="font-semibold text-2xl mb-6 flex items-center gap-2">
@@ -60,18 +65,66 @@ export default function Searchform() {
           </span>
         </div>
 
-        {/* Trip */}
-        <div className="relative w-[206px]">
-          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
-            Trip
-          </label>
+       {/* Trip */}
+<div className="relative w-[206px]">
+  <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
+    Trip
+  </label>
 
-          <select className="border h-14 px-4 rounded-md w-full">
-            <option>Return</option>
-            <option>One Way</option>
-            <option>Multicity</option>
-          </select>
-        </div>
+  <button
+    type="button"
+    onClick={() => setShowDropdown(!showDropdown)}
+    className="border h-14 px-4 rounded-md w-full bg-white flex items-center justify-between"
+  >
+    <span>{tripType}</span>
+    <Image
+  src="/chevron-down.svg"
+  alt="Dropdown"
+  width={14}
+  height={7}
+/>
+  </button>
+
+  {showDropdown && (
+    <div className="absolute top-[62px] left-1/2 -translate-x-1/2 z-50 w-[140px] h-[150px] bg-white rounded-[15px] border border-black/15 shadow-[0px_4px_10px_rgba(0,0,0,0.15)] overflow-hidden">
+      
+      <button
+        onClick={() => {
+          setTripType("One Way");
+          setShowDropdown(false);
+        }}
+        className="w-full h-[49px] flex items-center justify-center text-[14px] font-semibold text-black"
+      >
+        One Way
+      </button>
+
+      <div className="mx-4 border-b border-black/15"></div>
+
+      <button
+        onClick={() => {
+          setTripType("Round Trip");
+          setShowDropdown(false);
+        }}
+        className="w-full h-[49px] flex items-center justify-center text-[14px] font-semibold text-black"
+      >
+        Round Trip
+      </button>
+
+      <div className="mx-4 border-b border-black/15"></div>
+
+      <button
+        onClick={() => {
+          setTripType("Multicity");
+          setShowDropdown(false);
+        }}
+        className="w-full h-[48px] flex items-center justify-center text-[14px] font-semibold text-black"
+      >
+        Multicity
+      </button>
+
+    </div>
+  )}
+</div>
 
         {/* Depart */}
         <div className="relative w-[206px]">

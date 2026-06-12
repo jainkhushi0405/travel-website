@@ -72,3 +72,12 @@ body {
 .border-primary-orange {
   border-color: #F59842;
 }
+
+:root {
+  --primary-orange: #f2994a;
+  --footer-bg: #f2994a;
+  --newsletter-bg: #efd1b0;
+  --dark-green: #052b17;
+  --text-dark: #1f2937;
+  --white: #ffffff;
+}
