@@ -2,62 +2,60 @@ import Image from "next/image";
 import { reviews } from "./Data/reviews";
 
 export default function Reviews() {
-  
   return (
-    <section className="bg-[#FFFFFF] pt-2 pb-40">
+    <section className="bg-white pt-2 pb-40">
       <div className="max-w-[1232px] mx-auto">
+
         {/* Header */}
         <div className="flex items-start justify-between mb-12">
           <div>
-            <h2 className="text-[40px] font-bold text-[#112211]">
+            <h2 className="text-4xl font-bold text-gray-900">
               Reviews
             </h2>
 
-            <p className="mt-2 text-[14px] text-[#112211]/75">
+            <p className="mt-2 text-sm text-gray-700">
               What people says about Golobe facilities
             </p>
           </div>
 
-          <button className="border border-[#FFB84D] rounded px-4 py-2 text-[14px] text-[#112211]">
+          <button className="border border-orange-300 rounded px-4 py-2 text-sm text-gray-900">
             See All
           </button>
         </div>
 
         {/* Cards */}
-        <div className="flex justify-center gap-12">
+        <div className="flex gap-12">
           {reviews.map((review, index) => (
             <div
               key={index}
               className="relative w-[425px] h-[586px]"
             >
               {/* Orange Back Layer */}
-              <div className="absolute top-[22px] left-[25px] w-[425px] h-[586px] rounded-[20px] bg-[#F59842]/40" />
+              <div className="absolute top-[22px] left-[25px] w-[425px] h-[586px] rounded-[20px] bg-orange-400/40" />
 
               {/* Main Card */}
               <div className="relative z-10 w-[425px] h-[586px] bg-white rounded-[20px] p-6 shadow-[0_4px_16px_rgba(17,34,17,0.10)]">
                 <div className="h-full flex flex-col">
 
                   {/* Title */}
-                  <h3 className="text-[24px] font-bold leading-[100%] text-[#112211]">
+                  <h3 className="text-2xl font-bold leading-none text-gray-900">
                     “{review.title}”
                   </h3>
 
-                  {/* Gap */}
                   <div className="h-10" />
 
                   {/* Description */}
-                  <p className="h-[72px] text-[14px] font-medium leading-[100%] text-[#112211]/50">
-  {review.description}
-</p>
+                  <p className="h-[72px] text-sm font-medium leading-none text-gray-500">
+                    {review.description}
+                  </p>
 
                   {/* View More */}
                   <div className="flex justify-end mt-8">
-                    <button className="text-[16px] font-bold text-[#112211]">
+                    <button className="text-base font-bold text-gray-900">
                       View more
                     </button>
                   </div>
 
-                  {/* Gap */}
                   <div className="h-5" />
 
                   {/* Stars */}
@@ -73,21 +71,19 @@ export default function Reviews() {
                     ))}
                   </div>
 
-                  {/* Gap */}
                   <div className="h-3" />
 
                   {/* Name */}
                   <div>
-                    <h4 className="text-[14px] font-bold text-[#112211]">
+                    <h4 className="text-sm font-bold text-gray-900">
                       {review.name}
                     </h4>
 
-                    <p className="mt-1 text-[12px] font-medium text-[#112211]/50">
+                    <p className="mt-1 text-xs font-medium text-gray-500">
                       {review.location}
                     </p>
                   </div>
 
-                  {/* Gap */}
                   <div className="h-3" />
 
                   {/* Google */}
@@ -99,13 +95,12 @@ export default function Reviews() {
                       height={24}
                     />
 
-                    <span className="text-[12px] font-bold text-[#112211]/40">
+                    <span className="text-xs font-bold text-gray-400">
                       Google
                     </span>
                   </div>
 
-                  {/* Push Image Bottom */}
-                 <div className="h-8" />
+                  <div className="h-8" />
 
                   {/* Review Image */}
                   <Image
@@ -113,7 +108,7 @@ export default function Reviews() {
                     alt={review.name}
                     width={377}
                     height={200}
-                    className="rounded-[8px] object-cover"
+                    className="rounded-lg object-cover"
                   />
 
                 </div>
@@ -121,6 +116,7 @@ export default function Reviews() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

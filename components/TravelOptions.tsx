@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 export default function TravelOptions() {
   return (
     <section className="max-w-7xl mx-auto py-10 px-4">
@@ -6,7 +7,7 @@ export default function TravelOptions() {
 
         {/* Flights Card */}
         <div
-          className="w-card h-card rounded-[20px] overflow-hidden relative"
+          className="w-card h-card rounded-2xl overflow-hidden relative"
           style={{
             backgroundImage: "url('/flight-card.png')",
             backgroundSize: "cover",
@@ -15,7 +16,7 @@ export default function TravelOptions() {
         >
           <div className="absolute inset-0 bg-black/55" />
 
-          <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
             <h2 className="text-xl-custom font-bold text-white leading-none">
               Flights
             </h2>
@@ -24,14 +25,14 @@ export default function TravelOptions() {
               Search Flights & Places Hire to our most popular destinations
             </p>
 
-            <button className="h-button px-4 rounded bg-[#F59842] hover:bg-[#F59842] flex items-center gap-1 text-small font-medium text-[#112211]">
+            <button className="h-button px-4 rounded bg-primary-orange hover:bg-primary-orange flex items-center gap-1 text-small font-medium text-primary">
               <Image
-  src="/Paper Plane.svg"
-  alt="Flight"
-  width={14}
-  height={14}
-  className="w-3.5 h-3.5"
-/>
+                src="/Paper Plane.svg"
+                alt="Flight"
+                width={14}
+                height={14}
+                className="w-3.5 h-3.5"
+              />
               Show Flights
             </button>
           </div>
@@ -39,7 +40,7 @@ export default function TravelOptions() {
 
         {/* Holiday Card */}
         <div
-          className="w-card h-card rounded-[20px] overflow-hidden relative"
+          className="w-card h-card rounded-2xl overflow-hidden relative"
           style={{
             backgroundImage: "url('/holiday-card.png')",
             backgroundSize: "cover",
@@ -48,7 +49,7 @@ export default function TravelOptions() {
         >
           <div className="absolute inset-0 bg-black/55" />
 
-          <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
             <h2 className="text-xl-custom font-bold text-white leading-none">
               Holiday
             </h2>
@@ -57,14 +58,14 @@ export default function TravelOptions() {
               Search hotels & Places Hire to our most popular destinations
             </p>
 
-            <button className="h-button px-4 rounded bg-[#F59842] hover:bg-[#F59842] flex items-center gap-1 text-small font-medium text-[#112211]">
-             <Image
-  src="/Paper Plane.svg"
-  alt="Holiday"
-  width={14}
-  height={14}
-  className="w-3.5 h-3.5"
-/>
+            <button className="h-button px-4 rounded bg-primary-orange hover:bg-primary-orange flex items-center gap-1 text-small font-medium text-primary">
+              <Image
+                src="/Paper Plane.svg"
+                alt="Holiday"
+                width={14}
+                height={14}
+                className="w-3.5 h-3.5"
+              />
               Show Package
             </button>
           </div>

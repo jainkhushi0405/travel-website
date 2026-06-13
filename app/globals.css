@@ -81,3 +81,14 @@ body {
   --text-dark: #1f2937;
   --white: #ffffff;
 }
+.text-large {
+  font-size: 56px;
+}
+
+.text-heading {
+  font-size: 24px;
+}
+
+.rounded-custom {
+  border-radius: 20px;
+}

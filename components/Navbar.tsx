@@ -2,7 +2,8 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="absolute top-[32px] left-[48px] right-[48px] z-50 flex items-center justify-between">
+    <nav className="absolute top-8 left-12 right-12 z-50 flex items-center justify-between">
+                                  
       <Image
         src="/logo-white.png"
         alt="Travel World"
@@ -57,7 +58,7 @@ export default function Navbar() {
 
       <button
         className="
-          w-[163px]
+          w-40
           h-12
           bg-white
           text-black
