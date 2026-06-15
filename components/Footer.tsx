@@ -4,11 +4,9 @@ import { footerLinks } from "./constants/footer";
 export default function Footer() {
   return (
     <footer className="bg-[#F59842] pt-20 pb-8 relative">
-      <div className="max-w-[1232px] mx-auto">
-
+      <div className="max-w-7xl mx-auto">
         {/* Newsletter Card */}
         <div className="relative z-10 w-full h-[305px] mx-auto bg-[#FFD6B0] rounded-[20px] px-10 flex items-center justify-between -mt-[145px]">
-
           {/* Left Side */}
           <div className="max-w-[600px]">
             <h2 className="text-5xl font-bold leading-[1.05] text-[#112211]">
@@ -22,7 +20,8 @@ export default function Footer() {
             </h3>
 
             <p className="mt-2 text-sm text-[#112211]/70 max-w-[520px]">
-              Get inspired! Receive travel discounts, tips and behind the scenes stories.
+              Get inspired! Receive travel discounts, tips and behind the scenes
+              stories.
             </p>
 
             <div className="flex gap-4 mt-5">
@@ -50,7 +49,6 @@ export default function Footer() {
 
         {/* Footer Links */}
         <div className="grid grid-cols-6 gap-8 mt-6">
-
           {/* Logo + Social */}
           <div>
             <Image
@@ -61,10 +59,30 @@ export default function Footer() {
             />
 
             <div className="flex gap-3 mt-4">
-              <Image src="/footer/facebook.png" alt="facebook" width={18} height={18} />
-              <Image src="/footer/twitter.png" alt="twitter" width={18} height={18} />
-              <Image src="/footer/youtube.png" alt="youtube" width={18} height={18} />
-              <Image src="/footer/instagram.png" alt="instagram" width={18} height={18} />
+              <Image
+                src="/footer/facebook.png"
+                alt="facebook"
+                width={18}
+                height={18}
+              />
+              <Image
+                src="/footer/twitter.png"
+                alt="twitter"
+                width={18}
+                height={18}
+              />
+              <Image
+                src="/footer/youtube.png"
+                alt="youtube"
+                width={18}
+                height={18}
+              />
+              <Image
+                src="/footer/instagram.png"
+                alt="instagram"
+                width={18}
+                height={18}
+              />
             </div>
           </div>
 
@@ -112,7 +130,6 @@ export default function Footer() {
               </p>
             ))}
           </div>
-
         </div>
       </div>
     </footer>

@@ -1,10 +1,11 @@
 import Image from "next/image";
+import React from "react";
 import { trips } from "./Data/trips";
+import { Dot } from "lucide-react";
 
 export default function TripCards() {
   return (
     <section className="max-w-[1232px] mx-auto mt-16">
-      
       {/* Heading Row */}
       <div className="flex justify-between items-start mb-10">
         <div>
@@ -44,16 +45,19 @@ export default function TripCards() {
 
               <div className="flex items-center gap-2 text-sm font-medium text-primary">
                 <span>Flights</span>
-                <span>•</span>
+                <span>
+                  <Dot />
+                </span>
                 <span>Hotels</span>
-                <span>•</span>
+                <span>
+                  <Dot />
+                </span>
                 <span>Resorts</span>
               </div>
             </div>
           </div>
         ))}
       </div>
-
     </section>
   );
 }
