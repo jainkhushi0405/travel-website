@@ -1,10 +1,16 @@
 @import "tailwindcss";
-
+ */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
 
+  --primary-orange: #f2994a;
+  --footer-bg: #f2994a;
+  --newsletter-bg: #efd1b0;
+  --dark-green: #052b17;
+  --text-dark: #1f2937;
+  --white: #ffffff;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -17,9 +23,22 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat), sans-serif;
 }
-/* Text Classes */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
 .text-xl-custom {
   font-size: 40px;
+}
+
+.text-large {
+  font-size: 56px;
+}
+
+.text-heading {
+  font-size: 24px;
 }
 
 .text-medium {
@@ -34,7 +53,6 @@ body {
   font-size: 12px;
 }
 
-/* Width & Height Classes */
 .w-card {
   width: 604px;
 }
@@ -47,12 +65,10 @@ body {
   max-width: 389px;
 }
 
-/* Button Height */
 .h-button {
   height: 48px;
 }
 
-/* Colors */
 .text-primary {
   color: #112211;
 }
@@ -62,7 +78,7 @@ body {
 }
 
 .text-primary-fade {
-  color: rgba(17, 34, 17, 0.50);
+  color: rgba(17, 34, 17, 0.5);
 }
 
 .bg-primary-orange {
@@ -71,22 +87,6 @@ body {
 
 .border-primary-orange {
   border-color: #F59842;
-}
-
-:root {
-  --primary-orange: #f2994a;
-  --footer-bg: #f2994a;
-  --newsletter-bg: #efd1b0;
-  --dark-green: #052b17;
-  --text-dark: #1f2937;
-  --white: #ffffff;
-}
-.text-large {
-  font-size: 56px;
-}
-
-.text-heading {
-  font-size: 24px;
 }
 
 .rounded-custom {
