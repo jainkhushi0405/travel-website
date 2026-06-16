@@ -24,11 +24,11 @@ export default function Reviews() {
         </div>
 
         {/* Cards */}
-        <div className="flex gap-12">
+  <div className="flex gap-12 overflow-x-auto scrollbar-hide pb-4">
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="relative w-[425px] h-[586px]"
+             className="relative w-[425px] h-[586px] flex-shrink-0"
             >
               {/* Orange Back Layer */}
               <div className="absolute top-[22px] left-[25px] w-[425px] h-[586px] rounded-[20px] bg-orange-400/40" />

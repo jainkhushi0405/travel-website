@@ -1,5 +1,4 @@
 @import "tailwindcss";
- */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -91,4 +90,15 @@ body {
 
 .rounded-custom {
   border-radius: 20px;
+}
+scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.text-primary-orange {
+  color: #F59842;
 }
