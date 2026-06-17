@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { religions, temples } from "./Data/holyPlaces";
 
 export default function Navbar() {
   const [showHolyPlaces, setShowHolyPlaces] = useState(false);
@@ -48,9 +49,9 @@ export default function Navbar() {
           </li>
 
           <li
-            onClick={() => setShowHolyPlaces(!showHolyPlaces)}
-            className="flex items-center gap-1 cursor-pointer"
-          >
+  onClick={() => setShowHolyPlaces(!showHolyPlaces)}
+  className="flex items-center gap-4 cursor-pointer"
+>
             <Image
               src="/holy-places.svg"
               alt="Holy Places"
@@ -58,7 +59,12 @@ export default function Navbar() {
               height={20}
             />
             <span>Holy Places</span>
-            <span className="text-2xl">▾</span>
+            <Image
+            src="/holyplaces-arrow.svg"
+            alt="arrow"
+            width={10}
+            height={5}
+         />
           </li>
         </ul>
 
@@ -74,7 +80,7 @@ export default function Navbar() {
         >
           {/* LEFT COLUMN */}
           <div className="w-72 border-r border-gray-200">
-            {["Hindu", "Muslim", "Christian", "Jain", "Brahman"].map(
+           {religions.map(
               (item) => (
                 <div
                   key={item}
@@ -97,12 +103,7 @@ export default function Navbar() {
 
           {/* MIDDLE COLUMN */}
           <div className="w-72 border-r border-gray-200">
-            {[
-              "Ram Mandir",
-              "Hanuman Setu Mandir",
-              "Sri Venkateshwar Temple",
-              "Sheetala Devi Mandir",
-            ].map((item) => (
+            {temples.map((item) => (
               <div
                 key={item}
                 className="group h-12 px-6 flex items-center text-sm font-semibold cursor-pointer"
