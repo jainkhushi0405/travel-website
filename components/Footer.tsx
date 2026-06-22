@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-[#F59842] pt-20 pb-8 relative">
       <div className="max-w-7xl mx-auto">
         {/* Newsletter Card */}
-        <div className="relative z-10 w-full h-[305px] mx-auto bg-[#FFD6B0] rounded-[20px] px-10 flex items-center justify-between -mt-[145px]">
+        <div className="relative z-10 w-full h-[305px] mx-auto bg-[#FFD6B0] rounded-[20px] px-10 flex items-center justify-between -mt-[200px]">
           {/* Left Side */}
           <div className="max-w-[600px]">
             <h2 className="text-5xl font-bold leading-[1.05] text-[#112211]">
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Links */}
-        <div className="grid grid-cols-6 gap-8 mt-6">
+        <div className="grid grid-cols-6 gap-8 mt-14">
           {/* Logo + Social */}
           <div>
             <Image

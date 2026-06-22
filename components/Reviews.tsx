@@ -38,7 +38,7 @@ export default function Reviews() {
                 <div className="h-full flex flex-col">
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold leading-none text-gray-900">
+                  <h3 className="text-xl font-semibold leading-none text-gray-900">
                     “{review.title}”
                   </h3>
 
@@ -50,7 +50,7 @@ export default function Reviews() {
                   </p>
 
                   {/* View More */}
-                  <div className="flex justify-end mt-8">
+                  <div className="flex justify-end mt-0">
                     <button className="text-base font-bold text-gray-900">
                       View more
                     </button>
@@ -59,7 +59,7 @@ export default function Reviews() {
                   <div className="h-5" />
 
                   {/* Stars */}
-                  <div className="flex gap-1">
+                  <div className="flex gap-3">
                     {Array.from({ length: 5 }).map((_, starIndex) => (
                       <Image
                         key={starIndex}
@@ -71,7 +71,7 @@ export default function Reviews() {
                     ))}
                   </div>
 
-                  <div className="h-3" />
+                  <div className="h-7" />
 
                   {/* Name */}
                   <div>
