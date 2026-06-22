@@ -2,11 +2,18 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { religions, temples } from "./Data/holyPlaces";
+import {
+  religions,
+  holyPlacesData,
+} from "./Data/holyPlaces";
 
 export default function Navbar() {
   const [showHolyPlaces, setShowHolyPlaces] = useState(false);
+  const [selectedReligion, setSelectedReligion] = useState("Hindu");
+  const currentTemples =holyPlacesData[selectedReligion as keyof typeof holyPlacesData].temples;
+  const currentImages = holyPlacesData[selectedReligion as keyof typeof holyPlacesData].images;
   const dropdownRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -83,9 +90,10 @@ export default function Navbar() {
            {religions.map(
               (item) => (
                 <div
-                  key={item}
-                  className="group h-12 px-6 flex items-center justify-between text-sm font-semibold cursor-pointer"
-                >
+  key={item}
+  onMouseEnter={() => setSelectedReligion(item)}
+  className="group h-12 px-6 flex items-center justify-between text-sm font-semibold cursor-pointer"
+>
                   <span className="text-[#112211] group-hover:text-[#F59842] transition-colors duration-200">
                     {item}
                   </span>
@@ -103,7 +111,7 @@ export default function Navbar() {
 
           {/* MIDDLE COLUMN */}
           <div className="w-72 border-r border-gray-200">
-            {temples.map((item) => (
+           {currentTemples.map((item) => (
               <div
                 key={item}
                 className="group h-12 px-6 flex items-center text-sm font-semibold cursor-pointer"
@@ -117,21 +125,16 @@ export default function Navbar() {
 
           {/* IMAGES */}
           <div className="flex items-center gap-4 p-4 flex-1 justify-evenly min-w-0">
-            <Image
-              src="/holyplace1.png"
-              alt="Temple"
-              width={249}
-              height={230}
-              className="rounded-[20px] object-cover flex-shrink-0"
-            />
-
-            <Image
-              src="/holyplace2.png"
-              alt="Temple"
-              width={249}
-              height={230}
-              className="rounded-[20px] object-cover flex-shrink-0"
-            />
+            {currentImages.map((image, index) => (
+  <Image
+    key={index}
+    src={image}
+    alt="Temple"
+    width={249}
+    height={230}
+    className="rounded-[20px] object-cover flex-shrink-0"
+  />
+))}
           </div>
         </div>
       )}
