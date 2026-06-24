@@ -6,6 +6,10 @@ import {
   religions,
   holyPlacesData,
 } from "./Data/holyPlaces";
+import {
+  holidayCategories,
+  holidayPlacesData,
+} from "./Data/holidayPlaces";
 
 export default function Navbar() {
   const [showHolyPlaces, setShowHolyPlaces] = useState(false);
@@ -13,6 +17,21 @@ export default function Navbar() {
   const currentTemples =holyPlacesData[selectedReligion as keyof typeof holyPlacesData].temples;
   const currentImages = holyPlacesData[selectedReligion as keyof typeof holyPlacesData].images;
   const dropdownRef = useRef<HTMLDivElement>(null);
+  
+
+  const [showHoliday, setShowHoliday] = useState(false);
+
+  const [selectedHoliday, setSelectedHoliday] =
+    useState("South Africa");
+    const currentPlaces =
+  holidayPlacesData[
+    selectedHoliday as keyof typeof holidayPlacesData
+  ].places;
+
+const currentHolidayImages =
+  holidayPlacesData[
+    selectedHoliday as keyof typeof holidayPlacesData
+  ].images;
 
 
   useEffect(() => {
@@ -50,29 +69,33 @@ export default function Navbar() {
             Train
           </li>
 
-          <li className="flex items-center gap-2 cursor-pointer">
-            <Image src="/holiday.svg" alt="Holiday" width={20} height={20} />
-            Holiday
-          </li>
-
           <li
-  onClick={() => setShowHolyPlaces(!showHolyPlaces)}
+  onMouseEnter={() => setShowHoliday(true)}
+  className="flex items-center gap-2 cursor-pointer"
+>
+  <Image src="/holiday.svg" alt="Holiday" width={20} height={20} />
+  Holiday
+</li>
+        <li
+  onMouseEnter={() => setShowHolyPlaces(true)}
   className="flex items-center gap-4 cursor-pointer"
 >
-            <Image
-              src="/holy-places.svg"
-              alt="Holy Places"
-              width={20}
-              height={20}
-            />
-            <span>Holy Places</span>
-            <Image
-            src="/holyplaces-arrow.svg"
-            alt="arrow"
-            width={10}
-            height={5}
-         />
-          </li>
+  <Image
+    src="/holy-places.svg"
+    alt="Holy Places"
+    width={20}
+    height={20}
+  />
+
+  <span>Holy Places</span>
+
+  <Image
+    src="/holyplaces-arrow.svg"
+    alt="arrow"
+    width={10}
+    height={5}
+  />
+</li>
         </ul>
 
         <button className="w-40 h-12 bg-white text-black text-sm font-medium rounded-lg flex items-center justify-center">
@@ -82,9 +105,10 @@ export default function Navbar() {
 
       {showHolyPlaces && (
         <div
-          ref={dropdownRef}
-          className="absolute top-24 left-1/2 -translate-x-1/2 z-50 flex bg-white rounded-lg shadow-lg overflow-hidden"
-        >
+  ref={dropdownRef}
+  onMouseLeave={() => setShowHolyPlaces(false)}
+  className="absolute top-24 left-1/2 -translate-x-1/2 z-50 flex bg-white rounded-lg shadow-lg overflow-hidden"
+>
           {/* LEFT COLUMN */}
           <div className="w-72 border-r border-gray-200">
            {religions.map(
@@ -124,20 +148,84 @@ export default function Navbar() {
           </div>
 
           {/* IMAGES */}
-          <div className="flex items-center gap-4 p-4 flex-1 justify-evenly min-w-0">
+         <div className="flex items-center gap-4 p-4 flex-1 justify-evenly min-w-0">
             {currentImages.map((image, index) => (
-  <Image
+  <div
     key={index}
-    src={image}
-    alt="Temple"
-    width={249}
-    height={230}
-    className="rounded-[20px] object-cover flex-shrink-0"
-  />
+    className="w-64 h-56 overflow-hidden rounded-[20px] flex-shrink-0"
+  >
+    <Image
+      src={image}
+      alt="Temple"
+      width={249}
+      height={230}
+      className="w-full h-full object-cover"
+    />
+  </div>
 ))}
           </div>
         </div>
       )}
+      {showHoliday && (
+  <div
+    onMouseLeave={() => setShowHoliday(false)}
+    className="absolute top-24 left-1/2 -translate-x-1/2 z-50 flex bg-white rounded-lg shadow-lg overflow-hidden"
+  >
+    {/* LEFT */}
+    <div className="w-72 border-r border-gray-200">
+      {holidayCategories.map((item) => (
+        <div
+          key={item}
+          onMouseEnter={() => setSelectedHoliday(item)}
+          className="group h-12 px-6 flex items-center justify-between cursor-pointer"
+        >
+          <span className="text-[#112211] text-sm font-semibold group-hover:text-[#F59842]">
+            {item}
+          </span>
+
+          <Image
+            src="/icons/chevron-right.svg"
+            alt="arrow"
+            width={8}
+            height={8}
+          />
+        </div>
+      ))}
+    </div>
+
+    {/* MIDDLE */}
+    <div className="w-72 border-r border-gray-200">
+      {currentPlaces.map((item) => (
+        <div
+          key={item}
+          className="group h-12 px-6 flex items-center cursor-pointer"
+        >
+          <span className="text-[#112211] text-sm font-semibold group-hover:text-[#F59842]">
+            {item}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    {/* IMAGES */}
+    <div className="flex items-center gap-4 p-4">
+      {currentHolidayImages.map((image, index) => (
+        <div
+          key={index}
+          className="w-[249px] h-[230px] overflow-hidden rounded-[20px]"
+        >
+          <Image
+            src={image}
+            alt="Holiday"
+            width={249}
+            height={230}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+)}
     </>
   );
 }
