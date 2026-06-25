@@ -7,7 +7,11 @@ import { useState, useRef, useEffect } from "react";
 export default function Searchform() {
   const [tripType, setTripType] = useState("Return");
   const [showDropdown, setShowDropdown] = useState(false);
+
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const [departDate, setDepartDate] = useState("25 May 24");
+  const [returnDate, setReturnDate] = useState("25 May 24");
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -20,156 +24,142 @@ export default function Searchform() {
     }
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <div className="bg-white shadow-lg rounded-3xl p-8 max-w-7xl mx-auto -mt-20 relative z-10">
+
       {/* TITLE */}
-      <h3 className="font-semibold text-xl mb-6 flex items-center gap-2 text-gray-900">
-        <Image src="/flight-search.svg" alt="Flights" width={20} height={20} />
+      <h3 className="font-semibold text-xl mb-6 flex items-center gap-2">
+        <Image src="/flight-search.svg" width={20} height={20} alt="" />
         Flights
       </h3>
 
       {/* INPUT ROW */}
-      <div className="flex gap-2 items-end">
+      <div className="flex gap-3 items-end flex-nowrap">
+
         {/* FROM */}
-        <div className="relative w-50">
+        <div className="relative w-[190px] min-w-[190px]">
           <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             From
           </label>
-          <input
-            type="text"
-            value="Mumbai"
-            readOnly
-            className="border h-14 px-4 rounded-md w-full"
-          />
+
+          <div className="border h-14 px-3 rounded-md flex items-center bg-white">
+            <input
+              type="text"
+              value="Mumbai"
+              readOnly
+              className="w-full outline-none text-sm"
+            />
+            <img src="/ion_swap-horizontal.svg" className="w-4 h-4 ml-2" />
+          </div>
         </div>
 
         {/* TO */}
-        <div className="relative w-50">
+        <div className="relative w-[190px] min-w-[190px]">
           <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             To
           </label>
-          <input
-            type="text"
-            value="Delhi"
-            readOnly
-            className="border h-14 px-4 rounded-md w-full"
-          />
+
+          <div className="border h-14 px-3 rounded-md flex items-center bg-white">
+            <input
+              type="text"
+              value="Delhi"
+              readOnly
+              className="w-full outline-none text-sm"
+            />
+            <img src="/ion_swap-horizontal.svg" className="w-4 h-4 ml-2" />
+          </div>
         </div>
 
         {/* TRIP */}
-        <div ref={dropdownRef} className="relative w-50">
+        <div ref={dropdownRef} className="relative w-[190px] min-w-[190px]">
           <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Trip
           </label>
 
           <button
-            type="button"
             onClick={() => setShowDropdown(!showDropdown)}
-            className="border h-14 px-4 rounded-md w-full bg-white flex items-center justify-between"
+            className="flex items-center justify-between border h-14 px-3 rounded-md w-full bg-white"
           >
-            <span className="text-gray-900">{tripType}</span>
-            <Image
-              src="/chevron-down.svg"
-              alt="Dropdown"
-              width={14}
-              height={7}
-            />
+            <span className="text-sm">{tripType}</span>
+            <Image src="/chevron-down.svg" width={16} height={16} alt="" />
           </button>
 
           {showDropdown && (
-            <div className="absolute top-12 right-0  z-50 w-40 h-30 bg-white rounded-xl border border-black/10 shadow-md overflow-hidden">
-              <button
-                onClick={() => {
-                  setTripType("One Way");
-                  setShowDropdown(false);
-                }}
-                className="w-full h-10 flex items-center justify-center text-sm font-semibold text-gray-900"
-              >
-                One Way
-              </button>
-
-              <div className="mx-4 border-b border-black/10"></div>
-
-              <button
-                onClick={() => {
-                  setTripType("Round Trip");
-                  setShowDropdown(false);
-                }}
-                className="w-full h-10 flex items-center justify-center text-sm font-semibold text-gray-900"
-              >
-                Round Trip
-              </button>
-
-              <div className="mx-4 border-b border-black/10"></div>
-
-              <button
-                onClick={() => {
-                  setTripType("Multicity");
-                  setShowDropdown(false);
-                }}
-                className="w-full h-10 flex items-center justify-center text-sm font-semibold text-gray-900"
-              >
-                Multicity
-              </button>
+            <div className="absolute top-16 left-0 w-[180px] bg-white border rounded-xl shadow-lg z-50">
+              {["One Way", "Round Trip", "Multicity"].map((item) => (
+                <div
+                  key={item}
+                  onClick={() => {
+                    setTripType(item);
+                    setShowDropdown(false);
+                  }}
+                  className="px-4 py-2 text-sm hover:bg-orange-50 cursor-pointer"
+                >
+                  {item}
+                </div>
+              ))}
             </div>
           )}
         </div>
 
         {/* DEPART */}
-        <div className="relative w-50">
+        <div className="relative w-[190px] min-w-[190px]">
           <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Depart
           </label>
+
           <input
             type="text"
-            value="25 May 24"
-            readOnly
-            className="border h-14 px-4 rounded-md w-full"
+            value={departDate}
+            onChange={(e) => setDepartDate(e.target.value)}
+            className="border h-14 px-3 rounded-md w-full text-sm"
           />
         </div>
 
         {/* RETURN */}
-        <div className="relative w-50">
+        <div className="relative w-[190px] min-w-[190px]">
           <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
             Return
           </label>
+
           <input
             type="text"
-            value="25 May 24"
-            readOnly
-            className="border h-14 px-4 rounded-md w-full"
+            value={returnDate}
+            onChange={(e) => setReturnDate(e.target.value)}
+            className="border h-14 px-3 rounded-md w-full text-sm"
           />
         </div>
 
-        {/* PASSENGER */}
-        <div className="relative w-60">
-          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
+        {/* PASSENGER - FIXED */}
+        <div className="relative w-[190px] min-w-[190px]">
+          <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3 z-10">
             Passenger - Class
           </label>
-          <input
-            type="text"
-            value="2 Passenger, Economy"
-            readOnly
-            className="border h-14 px-4 rounded-md w-full"
-          />
+
+          <div className="border h-14 px-3 rounded-md w-full bg-white flex items-center">
+            <span className="text-sm text-gray-900 whitespace-nowrap">
+              2 Passenger, Economy
+            </span>
+          </div>
         </div>
+
       </div>
 
       {/* ACTIONS */}
-      <div className="flex justify-end items-center gap-8 mt-6">
-        <p className="text-gray-600 cursor-pointer">
-          <Plus className="inline-block mr-1 " /> Add Promo Code
+      <div className="flex justify-end items-center gap-6 mt-6">
+
+        <p className="flex items-center gap-1">
+          <Plus size={16} /> Add Promo Code
         </p>
 
-        <button className="w-36 h-12 bg-[#F59842] text-black rounded-md flex items-center justify-center gap-1">
-          <Image src="/Paper Plane.svg" alt="Flight" width={16} height={16} />
-          <span>Show Flights</span>
+        <button className="bg-[#F59842] px-5 py-3 rounded-md flex items-center gap-2">
+          <Image src="/Paper Plane.svg" width={16} height={16} alt="" />
+          Show Flights
         </button>
+
       </div>
     </div>
   );

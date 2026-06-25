@@ -152,7 +152,7 @@ const currentHolidayImages =
             {currentImages.map((image, index) => (
   <div
     key={index}
-    className="w-64 h-56 overflow-hidden rounded-[20px] flex-shrink-0"
+    className="w-64 h-56 overflow-hidden rounded-custom flex-shrink-0"
   >
     <Image
       src={image}
@@ -182,7 +182,7 @@ const currentHolidayImages =
           <span className="text-[#112211] text-sm font-semibold group-hover:text-[#F59842]">
             {item}
           </span>
-
+        
           <Image
             src="/icons/chevron-right.svg"
             alt="arrow"
@@ -200,7 +200,7 @@ const currentHolidayImages =
           key={item}
           className="group h-12 px-6 flex items-center cursor-pointer"
         >
-          <span className="text-[#112211] text-sm font-semibold group-hover:text-[#F59842]">
+          <span className="text-primary text-sm font-semibold group-hover:text-primary-orange">
             {item}
           </span>
         </div>
@@ -212,7 +212,7 @@ const currentHolidayImages =
       {currentHolidayImages.map((image, index) => (
         <div
           key={index}
-          className="w-[249px] h-[230px] overflow-hidden rounded-[20px]"
+          className="w-[249px] h-[230px] overflow-hidden rounded-custom"
         >
           <Image
             src={image}
