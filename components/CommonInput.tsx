@@ -1,47 +1,65 @@
 "use client";
 
-import Image from "next/image";
-
-type Props = {
+interface CommonInputProps {
   label: string;
   value: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   editable?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+
   rightIcon?: React.ReactNode;
-};
+  onClick?: () => void;
+
+  className?: string;
+}
 
 export default function CommonInput({
   label,
   value,
-  onChange,
   editable = false,
+  onChange,
   rightIcon,
-}: Props) {
+  onClick,
+  className = "",
+}: CommonInputProps) {
   return (
-    <div className="relative w-[190px] flex-shrink-0">
+    <div className={`relative flex flex-col flex-1 ${className}`}>
 
       {/* LABEL */}
-      <label className="text-xs text-gray-500 bg-white px-1 absolute -top-2 left-3">
+      <label className="text-[11px] text-gray-500 mb-[4px]">
         {label}
       </label>
 
-      {/* BOX */}
-      <div className="flex items-center border h-14 px-3 rounded-md bg-white shadow-sm">
-
-        <input
-          type="text"
-          value={value}
-          readOnly={!editable}
-          onChange={onChange}
-          className="w-full outline-none text-sm text-gray-900 truncate"
-        />
+      {/* INPUT BOX */}
+      <div
+        onClick={onClick}
+        className="
+          flex items-center justify-between
+          border border-gray-300
+          rounded-[4px]
+          px-3
+          h-[44px]
+          bg-white
+          cursor-pointer
+          min-w-0
+        "
+      >
+        {editable ? (
+          <input
+            value={value}
+            onChange={onChange}
+            className="w-full outline-none text-sm"
+          />
+        ) : (
+          <span className="text-sm text-black whitespace-nowrap overflow-hidden text-ellipsis">
+            {value}
+          </span>
+        )}
 
         {rightIcon && (
-          <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+          <div className="ml-2 flex-shrink-0">
             {rightIcon}
           </div>
         )}
-
       </div>
     </div>
   );
