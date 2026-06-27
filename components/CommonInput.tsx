@@ -5,10 +5,8 @@ interface CommonInputProps {
   value: string;
   editable?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-
   rightIcon?: React.ReactNode;
   onClick?: () => void;
-
   className?: string;
 }
 
@@ -22,25 +20,23 @@ export default function CommonInput({
   className = "",
 }: CommonInputProps) {
   return (
-    <div className={`relative flex flex-col ${className}`}>
-
-      {/* LABEL */}
-      <label className="text-[11px] text-gray-500 mb-[4px]">
+    <div className={`relative ${className}`}>
+      {/* Floating Label */}
+      <label className="absolute left-3 -top-2 bg-white px-1 text-[11px] text-gray-500 z-10">
         {label}
       </label>
 
-      {/* INPUT BOX */}
+      {/* Input Box */}
       <div
         onClick={onClick}
         className="
           flex items-center justify-between
           border border-gray-300
-          rounded-[4px]
+          rounded-md
           px-3
-          h-[44px]
+          h-[48px]
           bg-white
           cursor-pointer
-          min-w-0
         "
       >
         {editable ? (
@@ -50,16 +46,10 @@ export default function CommonInput({
             className="w-full outline-none text-sm"
           />
         ) : (
-          <span className="text-sm text-black block w-full truncate">
-            {value}
-          </span>
+          <span className="text-sm text-black truncate w-full">{value}</span>
         )}
 
-        {rightIcon && (
-          <div className="ml-2 flex-shrink-0">
-            {rightIcon}
-          </div>
-        )}
+        {rightIcon && <div className="ml-2 flex-shrink-0">{rightIcon}</div>}
       </div>
     </div>
   );
