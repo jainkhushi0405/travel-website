@@ -22,7 +22,7 @@ export default function CommonInput({
   className = "",
 }: CommonInputProps) {
   return (
-    <div className={`relative flex flex-col flex-1 ${className}`}>
+    <div className={`relative flex flex-col ${className}`}>
 
       {/* LABEL */}
       <label className="text-[11px] text-gray-500 mb-[4px]">
@@ -50,7 +50,7 @@ export default function CommonInput({
             className="w-full outline-none text-sm"
           />
         ) : (
-          <span className="text-sm text-black whitespace-nowrap overflow-hidden text-ellipsis">
+          <span className="text-sm text-black block w-full truncate">
             {value}
           </span>
         )}
