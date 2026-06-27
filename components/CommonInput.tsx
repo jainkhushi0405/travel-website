@@ -41,10 +41,11 @@ export default function CommonInput({
       >
         {editable ? (
           <input
-            value={value}
-            onChange={onChange}
-            className="w-full outline-none text-sm"
-          />
+  type={label === "Depart" || label === "Return" ? "date" : "text"}
+  value={value}
+  onChange={onChange}
+  className="w-full outline-none text-sm"
+/>
         ) : (
           <span className="text-sm text-black truncate w-full">{value}</span>
         )}

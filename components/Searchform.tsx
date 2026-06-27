@@ -11,8 +11,8 @@ export default function Searchform() {
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const [departDate, setDepartDate] = useState("25 May 24");
-  const [returnDate, setReturnDate] = useState("25 May 24");
+const [departDate, setDepartDate] = useState("");
+const [returnDate, setReturnDate] = useState("");
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -29,7 +29,7 @@ export default function Searchform() {
   }, []);
 
   return (
-    <div className="bg-white shadow-lg rounded-3xl p-8 max-w-7xl mx-auto -mt-20 relative z-10">
+   <div className="bg-white shadow-lg rounded-3xl px-6 py-6 max-w-6xl mx-auto -mt-20 relative z-10">
 
       {/* TITLE */}
       <h3 className="font-semibold text-xl mb-6 flex items-center gap-2">
@@ -55,7 +55,7 @@ export default function Searchform() {
         />
 
         {/* TRIP */}
-        <div ref={dropdownRef} className="relative min-w-[150px] flex-1">
+        <div ref={dropdownRef} className="relative min-w-[150px] max-w-[160px]">
           <CommonInput
             label="Trip"
             value={tripType}
@@ -83,26 +83,23 @@ export default function Searchform() {
           )}
         </div>
 
-        <CommonInput
-          label="Depart"
-          value={departDate}
-          editable={true}
-          onChange={(e) => setDepartDate(e.target.value)}
-          className="min-w-[150px]"
-        />
+ <CommonInput
+  label="Depart"
+  value={departDate}
+  editable={true}
+  onChange={(e) => setDepartDate(e.target.value)}
+/>
 
-        <CommonInput
-          label="Return"
-          value={returnDate}
-          editable={true}
-          onChange={(e) => setReturnDate(e.target.value)}
-          className="min-w-[150px]"
-        />
-
+<CommonInput
+  label="Return"
+  value={returnDate}
+  editable={true}
+  onChange={(e) => setReturnDate(e.target.value)}
+/>
         <CommonInput
           label="Passenger - Class"
           value="2 Passenger, Economy"
-          className="min-w-[150px]"
+          className="min-w-[200px]"
         />
 
       </div>
