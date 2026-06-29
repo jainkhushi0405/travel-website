@@ -9,6 +9,7 @@ interface CommonInputProps {
   rightIcon?: React.ReactNode;
   onClick?: () => void;
   className?: string;
+  placeholder?: string;
 }
 
 export default function CommonInput({
@@ -32,7 +33,7 @@ export default function CommonInput({
         onClick={onClick}
         className="
           flex items-center justify-between
-          border border-gray-300
+          border border-gray-400
           rounded-md
           px-3
           h-[48px]
@@ -56,3 +57,4 @@ export default function CommonInput({
     </div>
   );
 }
+  

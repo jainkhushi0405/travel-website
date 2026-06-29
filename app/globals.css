@@ -9,6 +9,7 @@
   --dark-green: #052b17;
   --text-dark: #1f2937;
   --white: #ffffff;
+ --input-border: #A8A8A8;
 }
 @theme inline {
   --color-background: var(--background);

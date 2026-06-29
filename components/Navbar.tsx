@@ -41,6 +41,7 @@ const currentHolidayImages =
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setShowHolyPlaces(false);
+setShowHoliday(false);
       }
     }
 
@@ -69,15 +70,21 @@ const currentHolidayImages =
             Train
           </li>
 
-          <li
-  onMouseEnter={() => setShowHoliday(true)}
+<li
+  onMouseEnter={() => {
+    setShowHolyPlaces(false);
+    setShowHoliday(true);
+  }}
   className="flex items-center gap-2 cursor-pointer"
 >
   <Image src="/holiday.svg" alt="Holiday" width={20} height={20} />
   Holiday
 </li>
-        <li
-  onMouseEnter={() => setShowHolyPlaces(true)}
+       <li
+  onMouseEnter={() => {
+    setShowHoliday(false);
+    setShowHolyPlaces(true);
+  }}
   className="flex items-center gap-4 cursor-pointer"
 >
   <Image

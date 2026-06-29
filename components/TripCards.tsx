@@ -5,7 +5,7 @@ import { Dot } from "lucide-react";
 
 export default function TripCards() {
   return (
-    <section className="max-w-[1232px] mx-auto mt-16">
+    <section className="max-w-[1232px] mx-auto mt-24">
       {/* Heading Row */}
       <div className="flex justify-between items-start mb-10">
         <div>

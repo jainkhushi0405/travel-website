@@ -10,10 +10,13 @@ export default function Searchform() {
   const [tripType, setTripType] = useState("Return");
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
+ const dropdownRef = useRef<HTMLDivElement>(null);
 
 const [departDate, setDepartDate] = useState("");
 const [returnDate, setReturnDate] = useState("");
+
+const [from, setFrom] = useState("Mumbai");
+const [to, setTo] = useState("Delhi");
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -30,7 +33,7 @@ const [returnDate, setReturnDate] = useState("");
   }, []);
 
   return (
-   <div className="bg-white shadow-lg rounded-3xl px-6 py-6 max-w-6xl mx-auto -mt-20 relative z-10">
+<div className="bg-white shadow-lg rounded-3xl px-6 py-6 max-w-7xl mx-auto -mt-20 relative z-10">
 
       {/* TITLE */}
       <h3 className="font-semibold text-xl mb-6 flex items-center gap-2">
@@ -41,22 +44,27 @@ const [returnDate, setReturnDate] = useState("");
       {/* INPUT ROW */}
       <div className="flex gap-3 items-end w-full">
 
-        <CommonInput
-          label="From"
-          value="Mumbai"
-          className="min-w-[150px]"
-          rightIcon={<img src="/ion_swap-horizontal.svg" className="w-4 h-4" />}
-        />
+       <CommonInput
+  label="From"
+  value={from}
+  placeholder="Mumbai"
+  editable={true}
+  onChange={(e) => setFrom(e.target.value)}
+  className="min-w-[180px]"
+  rightIcon={<img src="/ion_swap-horizontal.svg" className="w-4 h-4" />}
+/>
 
-        <CommonInput
-          label="To"
-          value="Delhi"
-          className="min-w-[150px]"
-          rightIcon={<img src="/ion_swap-horizontal.svg" className="w-4 h-4" />}
-        />
-
+       <CommonInput
+  label="To"
+  value={to}
+  placeholder="Delhi"
+  editable={true}
+  onChange={(e) => setTo(e.target.value)}
+  className="min-w-[180px]"
+  rightIcon={<img src="/ion_swap-horizontal.svg" className="w-4 h-4" />}
+/>
         {/* TRIP */}
-        <div ref={dropdownRef} className="relative min-w-[150px] max-w-[160px]">
+        <div ref={dropdownRef} className="relative min-w-[140px] max-w-[140px]">
           <CommonInput
             label="Trip"
             value={tripType}
@@ -67,7 +75,7 @@ const [returnDate, setReturnDate] = useState("");
           />
 
           {showDropdown && (
-            <div className="absolute top-[70px] left-0 w-full bg-white shadow-lg rounded-md z-50">
+          <div className="absolute top-[70px] left-0 w-full bg-white rounded-[15px] shadow-[0_10px_30px_rgba(0,0,0,0.18)] overflow-hidden z-50">
               {["One Way", "Round Trip", "Multicity"].map((item) => (
                 <div
                   key={item}
@@ -75,7 +83,7 @@ const [returnDate, setReturnDate] = useState("");
                     setTripType(item);
                     setShowDropdown(false);
                   }}
-                  className="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+                className="px-4 py-3 text-sm font-semibold border-b border-gray-100 last:border-b-0 hover:bg-gray-100 cursor-pointer"
                 >
                   {item}
                 </div>
@@ -100,7 +108,7 @@ const [returnDate, setReturnDate] = useState("");
         <CommonInput
           label="Passenger - Class"
           value="2 Passenger, Economy"
-          className="min-w-[200px]"
+          className="min-w-[250px]"
         />
 
       </div>
