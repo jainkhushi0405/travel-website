@@ -14,10 +14,8 @@ export default function Searchform() {
 
 const [departDate, setDepartDate] = useState("");
 const [returnDate, setReturnDate] = useState("");
-
-const [from, setFrom] = useState("Mumbai");
-const [to, setTo] = useState("Delhi");
-
+const [from, setFrom] = useState("");
+const [to, setTo] = useState("");
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -92,19 +90,22 @@ const [to, setTo] = useState("Delhi");
           )}
         </div>
 
- <CommonInput
+<CommonInput
   label="Depart"
   value={departDate}
+  placeholder="dd-mm-yyyy"
   editable={true}
   onChange={(e) => setDepartDate(e.target.value)}
 />
-
 <CommonInput
   label="Return"
   value={returnDate}
+  placeholder="dd-mm-yyyy"
   editable={true}
   onChange={(e) => setReturnDate(e.target.value)}
 />
+
+
         <CommonInput
           label="Passenger - Class"
           value="2 Passenger, Economy"
