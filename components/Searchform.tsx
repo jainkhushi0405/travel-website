@@ -5,17 +5,23 @@ import { Plus } from "lucide-react";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import CommonInput from "./CommonInput";
+function formatDate(dateStr: string) {
+  if (!dateStr) return "";
+  const [year, month, day] = dateStr.split("-");
+  return `${day} ${month} ${year}`; // DD MM YYYY
+}
 
 export default function Searchform() {
-  const [tripType, setTripType] = useState("Return");
-  const [showDropdown, setShowDropdown] = useState(false);
-
+ const [tripType, setTripType] = useState("Return");
+ const [showDropdown, setShowDropdown] = useState(false);
  const dropdownRef = useRef<HTMLDivElement>(null);
-
 const [departDate, setDepartDate] = useState("");
 const [returnDate, setReturnDate] = useState("");
 const [from, setFrom] = useState("");
 const [to, setTo] = useState("");
+const departRef = useRef<HTMLInputElement>(null);
+const returnRef = useRef<HTMLInputElement>(null);
+const [passenger, setPassenger] = useState("2 Passenger, Economy");
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -90,28 +96,64 @@ const [to, setTo] = useState("");
           )}
         </div>
 
-<CommonInput
-  label="Depart"
-  value={departDate}
-  placeholder="dd-mm-yyyy"
+<div className="relative min-w-[180px]">
+
+  <CommonInput
+    label="Depart"
+    value={departDate ? formatDate(departDate) : ""}
+    placeholder="dd mm yyyy"
+    editable={false}
+  />
+
+  <input
+    ref={departRef}
+    type="date"
+    className="absolute opacity-0 w-full h-full"
+    onChange={(e) => setDepartDate(e.target.value)}
+  />
+
+  <Image
+    src="/calendar.jpg"
+    width={16}
+    height={16}
+    alt=""
+    className="absolute right-3 top-4 cursor-pointer"
+    onClick={() => departRef.current?.showPicker()}
+  />
+</div>
+<div className="relative min-w-[180px]">
+
+  <CommonInput
+    label="Return"
+    value={returnDate ? formatDate(returnDate) : ""}
+    placeholder="dd mm yyyy"
+    editable={false}
+  />
+
+  <input
+    ref={returnRef}
+    type="date"
+    className="absolute opacity-0 w-full h-full"
+    onChange={(e) => setReturnDate(e.target.value)}
+  />
+
+  <Image
+    src="/calendar.jpg"
+    width={16}
+    height={16}
+    alt=""
+    className="absolute right-3 top-4 cursor-pointer"
+    onClick={() => returnRef.current?.showPicker()}
+  />
+</div>
+       <CommonInput
+  label="Passenger - Class"
+  value={passenger}
+  placeholder="2 Passenger, Economy"
   editable={true}
-  onChange={(e) => setDepartDate(e.target.value)}
+  onChange={(e) => setPassenger(e.target.value)}
+  className="min-w-[250px]"
 />
-<CommonInput
-  label="Return"
-  value={returnDate}
-  placeholder="dd-mm-yyyy"
-  editable={true}
-  onChange={(e) => setReturnDate(e.target.value)}
-/>
-
-
-        <CommonInput
-          label="Passenger - Class"
-          value="2 Passenger, Economy"
-          className="min-w-[250px]"
-        />
-
       </div>
 
       {/* ACTIONS */}

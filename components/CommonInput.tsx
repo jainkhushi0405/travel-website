@@ -42,19 +42,13 @@ export default function CommonInput({
           cursor-pointer
         "
       >
-        {editable ? (
-          <input
-            type="text"
-            value={value}
-            placeholder={placeholder}  // ✅ now safe
-            onChange={onChange}
-            className="w-full outline-none text-sm placeholder:text-gray-400"
-          />
-        ) : (
-          <span className="text-sm text-black truncate w-full">
-            {value}
-          </span>
-        )}
+       <input
+  type="text"
+  value={value}
+  placeholder={placeholder || "dd mm yyyy"}
+  onChange={onChange}
+  className="w-full outline-none text-sm text-black placeholder:text-gray-400"
+/>
 
         {rightIcon && (
           <div className="ml-2 flex-shrink-0">
