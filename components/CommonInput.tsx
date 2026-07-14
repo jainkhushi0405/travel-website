@@ -42,13 +42,23 @@ export default function CommonInput({
           cursor-pointer
         "
       >
-       <input
-  type="text"
-  value={value}
-  placeholder={placeholder || "dd mm yyyy"}
-  onChange={onChange}
-  className="w-full outline-none text-sm text-black placeholder:text-gray-400"
-/>
+      {editable ? (
+  <input
+    type="text"
+    value={value}
+    placeholder={placeholder || "dd mm yyyy"}
+    onChange={onChange}
+    className="w-full outline-none text-sm text-black placeholder:text-gray-400"
+  />
+) : (
+  <div className="w-full text-sm text-black truncate">
+    {value || (
+      <span className="text-gray-400">
+        {placeholder || "dd mm yyyy"}
+      </span>
+    )}
+  </div>
+)}
 
         {rightIcon && (
           <div className="ml-2 flex-shrink-0">
